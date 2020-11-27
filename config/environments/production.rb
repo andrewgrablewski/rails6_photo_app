@@ -94,10 +94,11 @@ Rails.application.configure do
     :address        => 'smtp.mailgun.org',
     :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
     :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => 'andrew-photo-app.heroku.com',
+    :domain         => 'heroku.com',
     :authentication => :plain,
   }
-  ActionMailer::Base.delivery_method = :smtp
+ config.action_mailer.delivery_method=:smtp
+ config.action_mailer.default_url_options = {:host => 'andrew-photo-app.heroku.com', protocol => 'https'}
 
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
