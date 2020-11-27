@@ -99,7 +99,7 @@ Rails.application.configure do
     :authentication => :plain,
     :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
     :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => 'heroku.com',
+    :domain         => ENV['MAILGUN_DOMAIN'],
     :enable_starttls_auto => true
   }
 
